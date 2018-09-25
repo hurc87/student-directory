@@ -17,7 +17,11 @@ def input_students
     end
     #add the student hash to the array
     students << {name: name, cohort: cohort_choice, country_of_birth: country}
+    if students.count == 1
+    puts "Now we have #{students.count} student"
+    else
     puts "Now we have #{students.count} students"
+    end
     # get another name from the user
     name = gets.chomp
   end
@@ -42,7 +46,11 @@ def print(students)
 end
 
 def print_footer(names)
+  if names.count == 1
+  puts puts "Overall, we have #{names.count} great student"
+  else
   puts "Overall, we have #{names.count} great students"
+  end
 end
 
 students = input_students

@@ -26,10 +26,9 @@ def print(students)
   puts "What letter would you like to view?"
   letter = gets.chomp
   students.each.with_index do |student, index|
-    if student[:name].start_with?(letter)
-      if student[:name].length < 12
-      puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)"
-      end
+    while student[:name].length < 12 && student[:name].start_with?(letter)
+    puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)"
+    break
     end
   end
 end

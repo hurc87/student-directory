@@ -11,6 +11,7 @@ def input_students
     country = gets.chomp
     puts "Which Cohort"
     cohort_choice = gets.chomp
+    cohort_choice.to_sym
     if cohort_choice.empty?
     cohort_choice = "Unknown"
     end

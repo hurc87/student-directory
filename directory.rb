@@ -31,10 +31,10 @@ def print_header
 end
 
 def print(students)
-  puts "What letter would you like to view?"
-  letter = gets.chomp
+  puts "Which cohort would you like to view?"
+  month = gets.chomp
   students.each.with_index do |student, index|
-    while student[:name].length < 12 && student[:name].start_with?(letter)
+    while student[:name].length < 12 && student[:cohort].include?(month)
     puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort), Country of birth:#{student[:country_of_birth]} "
     break
     end

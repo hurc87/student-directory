@@ -7,8 +7,10 @@ def input_students
   name = gets.chomp
   #while name is not empty, repeat the code
   while !name.empty? do
+    puts "Country of birth"
+    country = gets.chomp
     #add the student hash to the array
-    students << {name: name, cohort: :november}
+    students << {name: name, cohort: :november, country_of_birth: country}
     puts "Now we have #{students.count} students"
     # get another name from the user
     name = gets.chomp
@@ -27,7 +29,7 @@ def print(students)
   letter = gets.chomp
   students.each.with_index do |student, index|
     while student[:name].length < 12 && student[:name].start_with?(letter)
-    puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort)"
+    puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort), Country of birth:#{student[:country_of_birth]} "
     break
     end
   end

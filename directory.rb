@@ -9,8 +9,13 @@ def input_students
   while !name.empty? do
     puts "Country of birth"
     country = gets.chomp
+    puts "Which Cohort"
+    cohort_choice = gets.chomp
+    if cohort_choice.empty?
+    cohort_choice = "Unknown"
+    end
     #add the student hash to the array
-    students << {name: name, cohort: :november, country_of_birth: country}
+    students << {name: name, cohort: cohort_choice, country_of_birth: country}
     puts "Now we have #{students.count} students"
     # get another name from the user
     name = gets.chomp

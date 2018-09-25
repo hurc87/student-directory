@@ -4,13 +4,13 @@ def input_students
   #create an empty array
   students = []
   #get the first name
-  name = gets.chomp
+  name = gets.rstrip
   #while name is not empty, repeat the code
   while !name.empty? do
     puts "Country of birth"
-    country = gets.chomp
+    country = gets.rstrip
     puts "Which Cohort"
-    cohort_choice = gets.chomp
+    cohort_choice = gets.rstrip
     cohort_choice.to_sym
     if cohort_choice.empty?
     cohort_choice = "Unknown"
@@ -23,7 +23,7 @@ def input_students
     puts "Now we have #{students.count} students"
     end
     # get another name from the user
-    name = gets.chomp
+    name = gets.rstrip
   end
   # return the array of input_students
   students
@@ -36,7 +36,7 @@ end
 
 def print(students)
   puts "Which cohort would you like to view?"
-  month = gets.chomp
+  month = gets.rstrip
   students.each.with_index do |student, index|
     while student[:name].length < 12 && student[:cohort].include?(month)
     puts "#{index+1}. #{student[:name]} (#{student[:cohort]} cohort), Country of birth:#{student[:country_of_birth]} "
